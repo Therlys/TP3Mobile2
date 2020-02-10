@@ -1,0 +1,1 @@
+This project is being done in a school context. It is not advisable to contribute to this project in this context. Therefore, please do not contribute to this project if you are not part of the collaborators in this project. Thank you for respecting our contributing guidelines.
