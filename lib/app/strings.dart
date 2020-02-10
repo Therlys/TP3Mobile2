@@ -1,4 +1,3 @@
-//TODO : Créer la classe "Strings" pour contenir les chaines de caractères de l'application.
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show SynchronousFuture;
 
