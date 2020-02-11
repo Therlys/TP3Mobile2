@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show SynchronousFuture;
+import 'package:flutter/material.dart';
 
 class Strings {
   static const values = {
@@ -18,23 +18,29 @@ class Strings {
   final Map<String, String> _values;
 
   String get title => _values["title"];
+
   String get learn => _values["learn"];
+
   String get train => _values["train"];
 
   Strings(Locale locale) : _values = values[locale.languageCode];
+
   Strings.of(BuildContext context) : this(Localizations.localeOf(context));
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<Strings> {
   const AppLocalizationsDelegate._internal();
 
-  static const AppLocalizationsDelegate delegate = AppLocalizationsDelegate._internal();
+  static const AppLocalizationsDelegate delegate =
+      AppLocalizationsDelegate._internal();
 
   @override
-  bool isSupported(Locale locale) => Strings.values.containsKey(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      Strings.values.containsKey(locale.languageCode);
 
   @override
-  Future<Strings> load(Locale locale) => SynchronousFuture<Strings>(Strings(locale));
+  Future<Strings> load(Locale locale) =>
+      SynchronousFuture<Strings>(Strings(locale));
 
   @override
   bool shouldReload(AppLocalizationsDelegate old) => false;

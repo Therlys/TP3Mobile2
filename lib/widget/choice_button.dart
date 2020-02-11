@@ -7,9 +7,9 @@ class ChoiceButton extends StatelessWidget {
 
   const ChoiceButton(
       {Key key,
-        @required this.text,
-        @required this.onPressed,
-       this.isDisabled = false})
+      @required this.text,
+      @required this.onPressed,
+      this.isDisabled = false})
       : super(key: key);
 
   @override
@@ -17,11 +17,10 @@ class ChoiceButton extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(4.0),
-        child: new RaisedButton(
-          textColor: Colors.white,
-          color: Colors.blueAccent,
+        child: new OutlineButton(
+          disabledTextColor: Colors.redAccent,
+          disabledBorderColor: Colors.redAccent,
           onPressed: isDisabled ? null : onPressed,
-          elevation: 2.0,
           child: new Text(
             text,
             textScaleFactor: 1.5,

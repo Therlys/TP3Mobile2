@@ -3,12 +3,14 @@ import 'package:tp3/grapheme/grapheme_model.dart';
 
 import '../app/config.dart';
 
-class LearnTab extends StatefulWidget {
+class LearnPage extends StatefulWidget {
   @override
-  _LearnTabState createState() => _LearnTabState();
+  _LearnPageState createState() => _LearnPageState();
+
+  LearnPage({Key key}) : super(key: key);
 }
 
-class _LearnTabState extends State<LearnTab>
+class _LearnPageState extends State<LearnPage>
     with AutomaticKeepAliveClientMixin {
   final List<GraphemeModel> graphemes = Config.graphemes;
 

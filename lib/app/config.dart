@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:tp3/grapheme/grapheme_model.dart';
 
 class Config {
@@ -63,7 +61,4 @@ class Config {
   ];
 
   static const int trainNbChoices = 3;
-  static final Random _random = Random();
-  static GraphemeModel getRandomGraphemeModel() => graphemes.elementAt(_random.nextInt(graphemes.length - 1));
-  static int getRandomAnswerIndex() => _random.nextInt(trainNbChoices);
 }
