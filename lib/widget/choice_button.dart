@@ -5,12 +5,12 @@ class ChoiceButton extends StatelessWidget {
   final Function() onPressed;
   final bool isDisabled;
 
-  const ChoiceButton(
-      {Key key,
-      @required this.text,
-      @required this.onPressed,
-      this.isDisabled = false})
-      : super(key: key);
+  const ChoiceButton({
+    Key key,
+    @required this.text,
+    @required this.onPressed,
+    this.isDisabled = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,9 @@ class ChoiceButton extends StatelessWidget {
       disabledTextColor: Colors.redAccent,
       disabledBorderColor: Colors.redAccent,
       onPressed: isDisabled ? null : onPressed,
-        child: Text(
-          text,
-        ),
+      child: Text(
+        text,
+      ),
     );
   }
 }

@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:tp3/app/durations.dart';
 import 'package:tp3/app/keys.dart';
 import 'package:tp3/app/strings.dart';
-import 'package:tp3/widget/learn_page.dart';
-import 'package:tp3/widget/train_page.dart';
+import 'package:tp3/pages/learn_page.dart';
+import 'package:tp3/pages/train_page.dart';
 
-class UnderstandRoute extends StatefulWidget {
-  const UnderstandRoute({Key key}) : super(key: key);
+class HomeRoute extends StatefulWidget {
+  const HomeRoute({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return UnderstandRouteState();
+    return HomeRouteState();
   }
 }
 
-class UnderstandRouteState extends State<UnderstandRoute> {
+class HomeRouteState extends State<HomeRoute> {
   final _pageController = PageController();
   int _currentPageIndex = 0;
 
@@ -37,10 +37,8 @@ class UnderstandRouteState extends State<UnderstandRoute> {
         currentIndex: _currentPageIndex,
         onTap: _onTabTapped,
         items: [
-          BottomNavigationBarItem(
-              title: Text(strings.learn), icon: Icon(Icons.book)),
-          BottomNavigationBarItem(
-              title: Text(strings.train), icon: Icon(Icons.edit))
+          BottomNavigationBarItem(title: Text(strings.learn), icon: Icon(Icons.book)),
+          BottomNavigationBarItem(title: Text(strings.train), icon: Icon(Icons.edit))
         ],
       ),
     );

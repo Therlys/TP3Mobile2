@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tp3/app/strings.dart';
-import 'package:tp3/grapheme/understand_route.dart';
+import 'package:tp3/route/home_route.dart';
 
 class App extends StatelessWidget {
   @override
@@ -14,6 +14,6 @@ class App extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
         ],
         onGenerateTitle: (BuildContext context) => Strings.of(context).title,
-        home: UnderstandRoute());
+        home: HomeRoute());
   }
 }

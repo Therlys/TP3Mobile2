@@ -1,14 +1,15 @@
 import 'dart:math';
 
-import 'package:tp3/grapheme/grapheme_model.dart';
-
 import 'config.dart';
 
 class Utils {
-  static final Random _random = Random();
+  static final Random random = Random();
+}
 
-  static GraphemeModel getRandomGraphemeModel() =>
-      Config.graphemes.elementAt(_random.nextInt(Config.graphemes.length));
+extension ListExtensions<T> on List<T> {
+  T get random => this.elementAt(Utils.random.nextInt(Config.graphemes.length));
 
-  static int getRandomAnswerIndex() => _random.nextInt(Config.trainNbChoices);
+  void addElementIfNotExists(T element) {
+    if (!this.contains(element)) this.add(element);
+  }
 }

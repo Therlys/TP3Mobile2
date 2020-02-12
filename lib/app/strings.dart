@@ -31,16 +31,13 @@ class Strings {
 class AppLocalizationsDelegate extends LocalizationsDelegate<Strings> {
   const AppLocalizationsDelegate._internal();
 
-  static const AppLocalizationsDelegate delegate =
-      AppLocalizationsDelegate._internal();
+  static const AppLocalizationsDelegate delegate = AppLocalizationsDelegate._internal();
 
   @override
-  bool isSupported(Locale locale) =>
-      Strings.values.containsKey(locale.languageCode);
+  bool isSupported(Locale locale) => Strings.values.containsKey(locale.languageCode);
 
   @override
-  Future<Strings> load(Locale locale) =>
-      SynchronousFuture<Strings>(Strings(locale));
+  Future<Strings> load(Locale locale) => SynchronousFuture<Strings>(Strings(locale));
 
   @override
   bool shouldReload(AppLocalizationsDelegate old) => false;

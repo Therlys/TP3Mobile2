@@ -1,4 +1,4 @@
-import 'package:tp3/grapheme/grapheme_model.dart';
+import 'package:tp3/model/grapheme_model.dart';
 
 class Config {
   static const List<GraphemeModel> graphemes = [
