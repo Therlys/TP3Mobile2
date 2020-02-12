@@ -13,6 +13,7 @@ class App extends StatelessWidget {
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],
+        onGenerateTitle: (BuildContext context) => Strings.of(context).title,
         home: UnderstandRoute());
   }
 }
