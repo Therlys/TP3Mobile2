@@ -9,10 +9,10 @@ class TrainModel {
   List<String> _attempts = [];
 
   TrainModel() {
-    reset();
+    onNewGame();
   }
 
-  void reset() {
+  void onNewGame() {
     _choiceGraphemes.clear();
     while (_choiceGraphemes.length < Config.trainNbChoices) {
       final GraphemeModel graphemeModel = Utils.getRandomGraphemeModel();
@@ -26,7 +26,7 @@ class TrainModel {
   String getSymbol() => _answer.symbol;
 
   void onChoiceClick(String choice) =>
-      _isGoodAnswer(choice) ? reset() : _attempts.add(choice);
+      _isGoodAnswer(choice) ? onNewGame() : _attempts.add(choice);
 
   bool isDisabled(String choice) => _attempts.contains(choice);
 
