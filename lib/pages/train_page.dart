@@ -23,10 +23,11 @@ class _TrainPageState extends State<TrainPage> with AutomaticKeepAliveClientMixi
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-              child: GraphemeCard(
-            grapheme: _trainModel.answer,
-            isShowingTranslation: false,
-          )),
+            child: GraphemeCard(
+              grapheme: _trainModel.answer,
+              isShowingTranslation: false,
+            ),
+          ),
           for (String choice in _trainModel.choices)
             ChoiceButton(
               text: choice,

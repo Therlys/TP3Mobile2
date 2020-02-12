@@ -19,7 +19,10 @@ class LearnPage extends StatelessWidget {
                     : Dimens.nbOfLearnColumnsInLandscapeOrientation),
             itemCount: Config.graphemes.length,
             itemBuilder: (_, i) {
-              return GraphemeCard(grapheme: Config.graphemes.elementAt(i), isShowingTranslation: true);
+              return GraphemeCard(
+                grapheme: Config.graphemes.elementAt(i),
+                isShowingTranslation: true,
+              );
             },
           ),
         );

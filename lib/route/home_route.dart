@@ -29,16 +29,26 @@ class HomeRouteState extends State<HomeRoute> {
         controller: _pageController,
         onPageChanged: _onPageChanged,
         children: <Widget>[
-          LearnPage(key: PageStorageKey(Keys.learnPageKey)),
-          TrainPage(key: PageStorageKey(Keys.trainPageKey)),
+          LearnPage(
+            key: PageStorageKey(Keys.learnPageKey),
+          ),
+          TrainPage(
+            key: PageStorageKey(Keys.trainPageKey),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentPageIndex,
         onTap: _onTabTapped,
         items: [
-          BottomNavigationBarItem(title: Text(strings.learn), icon: Icon(Icons.book)),
-          BottomNavigationBarItem(title: Text(strings.train), icon: Icon(Icons.edit))
+          BottomNavigationBarItem(
+            title: Text(strings.learn),
+            icon: Icon(Icons.book),
+          ),
+          BottomNavigationBarItem(
+            title: Text(strings.train),
+            icon: Icon(Icons.edit),
+          ),
         ],
       ),
     );

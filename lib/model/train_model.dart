@@ -25,8 +25,8 @@ class TrainModel {
   void startNewGame() {
     _choiceGraphemes.clear();
     while (_choiceGraphemes.length < Config.trainNbChoices) {
-      final GraphemeModel graphemeModel = Config.graphemes.random;
-      if (graphemeModel != _answer) _choiceGraphemes.addElementIfNotExists(graphemeModel);
+      final GraphemeModel _graphemeModel = Config.graphemes.random;
+      if (_graphemeModel != _answer) _choiceGraphemes.addElementIfNotExists(_graphemeModel);
     }
     _answer = _choiceGraphemes.first;
     _choiceGraphemes.shuffle();
