@@ -38,6 +38,4 @@ class TrainModel {
   bool isDisabled(String choice) => _attempts.contains(choice);
 
   bool _isGoodAnswer(String choice) => choice == _answer.translation;
-
-  static int getRandomAnswerIndex() => Utils.random.nextInt(Config.trainNbChoices);
 }
