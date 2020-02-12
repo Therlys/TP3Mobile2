@@ -12,7 +12,7 @@ class TrainPage extends StatefulWidget {
 }
 
 class _TrainPageState extends State<TrainPage> with AutomaticKeepAliveClientMixin {
-  final trainModel = TrainModel();
+  final _trainModel = TrainModel();
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +24,14 @@ class _TrainPageState extends State<TrainPage> with AutomaticKeepAliveClientMixi
         children: <Widget>[
           Expanded(
               child: GraphemeCard(
-            grapheme: trainModel.answer,
+            grapheme: _trainModel.answer,
             isShowingTranslation: false,
           )),
-          for (String choice in trainModel.choices)
+          for (String choice in _trainModel.choices)
             ChoiceButton(
               text: choice,
               onPressed: () => {_onChoiceClick(choice)},
-              isDisabled: trainModel.isDisabled(choice),
+              isDisabled: _trainModel.isDisabled(choice),
             ),
         ],
       ),
@@ -40,7 +40,7 @@ class _TrainPageState extends State<TrainPage> with AutomaticKeepAliveClientMixi
 
   void _onChoiceClick(String choice) {
     setState(() {
-      trainModel.onChoiceClick(choice);
+      _trainModel.onChoiceClick(choice);
     });
   }
 
