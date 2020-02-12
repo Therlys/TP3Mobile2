@@ -5,7 +5,7 @@ import 'grapheme_model.dart';
 
 class TrainModel {
   GraphemeModel _answer;
-  List<GraphemeModel> _choices = [];
+  List<GraphemeModel> _choiceGraphemes = [];
   List<String> _attempts = [];
 
   TrainModel() {
@@ -13,23 +13,17 @@ class TrainModel {
   }
 
   void reset() {
-    _choices.clear();
-    while (_choices.length < Config.trainNbChoices) {
+    _choiceGraphemes.clear();
+    while (_choiceGraphemes.length < Config.trainNbChoices) {
       final GraphemeModel graphemeModel = Utils.getRandomGraphemeModel();
-      if(graphemeModel != _answer && !_choices.contains(graphemeModel)) _choices.add(graphemeModel);
+      if(graphemeModel != _answer && !_choiceGraphemes.contains(graphemeModel)) _choiceGraphemes.add(graphemeModel);
     }
-    _answer = _choices.first;
-    _choices.shuffle();
+    _answer = _choiceGraphemes.first;
+    _choiceGraphemes.shuffle();
     _attempts.clear();
   }
 
   String getSymbol() => _answer.symbol;
-
-  String getFirstChoice() => _choices.first.translation;
-
-  String getSecondChoice() => _choices.elementAt(1).translation;
-
-  String getThirdChoice() => _choices.last.translation;
 
   void onChoiceClick(String choice) =>
       _isGoodAnswer(choice) ? reset() : _attempts.add(choice);
@@ -37,4 +31,12 @@ class TrainModel {
   bool isDisabled(String choice) => _attempts.contains(choice);
 
   bool _isGoodAnswer(String choice) => choice == _answer.translation;
+  
+  List<String> getChoices(){
+    List<String> _choices = [];
+    for (int i = 0; i < _choiceGraphemes.length; i++){
+      _choices.add(_choiceGraphemes[i].translation);
+    }
+    return _choices;
+  }
 }

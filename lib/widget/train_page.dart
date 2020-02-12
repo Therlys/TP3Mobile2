@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp3/app/dimens.dart';
 import 'package:tp3/grapheme/train_model.dart';
 import 'package:tp3/widget/choice_button.dart';
 
@@ -16,41 +17,28 @@ class _TrainPageState extends State<TrainPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return OrientationBuilder(builder: (context, orientation) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Expanded(
-            flex: orientation == Orientation.portrait ? 6 : 4,
-            child: new Card(
-              elevation: 2.0,
-              margin: EdgeInsets.all(8.0),
-              child: Center(
-                child: new Text(
-                  trainModel.getSymbol(),
-                  textScaleFactor: orientation == Orientation.portrait ? 16 : 7,
-                ),
+      return Padding(
+        padding: const EdgeInsets.all(Dimens.paddingSmall),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              child: Card(
+                    child: FittedBox(
+                      child: Text(
+                        trainModel.getSymbol(),),
+                  ),
               ),
             ),
-          ),
-          ChoiceButton(
-            text: trainModel.getFirstChoice(),
-            onPressed: () => {_onChoiceClick(trainModel.getFirstChoice())},
-            isDisabled: trainModel.isDisabled(trainModel.getFirstChoice()),
-          ),
-          ChoiceButton(
-            text: trainModel.getSecondChoice(),
-            onPressed: () => {_onChoiceClick(trainModel.getSecondChoice())},
-            isDisabled: trainModel.isDisabled(trainModel.getSecondChoice()),
-          ),
-          ChoiceButton(
-            text: trainModel.getThirdChoice(),
-            onPressed: () => {_onChoiceClick(trainModel.getThirdChoice())},
-            isDisabled: trainModel.isDisabled(trainModel.getThirdChoice()),
-          ),
-        ],
+            for (String choice in trainModel.getChoices())
+              ChoiceButton(
+                text: choice,
+                onPressed: () => {_onChoiceClick(choice)},
+                isDisabled: trainModel.isDisabled(choice),
+              ),
+          ],
+        ),
       );
-    });
   }
 
   void _onChoiceClick(String choice) {

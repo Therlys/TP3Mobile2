@@ -14,19 +14,13 @@ class ChoiceButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: new OutlineButton(
-          disabledTextColor: Colors.redAccent,
-          disabledBorderColor: Colors.redAccent,
-          onPressed: isDisabled ? null : onPressed,
-          child: new Text(
-            text,
-            textScaleFactor: 1.5,
-          ),
+    return OutlineButton(
+      disabledTextColor: Colors.redAccent,
+      disabledBorderColor: Colors.redAccent,
+      onPressed: isDisabled ? null : onPressed,
+        child: Text(
+          text,
         ),
-      ),
     );
   }
 }
